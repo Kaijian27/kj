@@ -35,7 +35,7 @@
             font-size: 14px;
         }
         
-        /* Side-by-side image layout */
+        /* Side-by-side hero image layout */
         .hero-images {
             display: flex;
             gap: 15px;
@@ -43,11 +43,42 @@
             justify-content: center;
         }
         .hero-images img {
-            width: 48%; /* Keeps them side-by-side */
+            width: 48%; 
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
             border: 1px solid #eee;
             object-fit: cover;
+        }
+
+        /* 3-Column Grid for System Action Shots */
+        .action-grid {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            margin-bottom: 20px;
+        }
+        .action-grid div {
+            flex: 1;
+            text-align: center;
+        }
+        .action-grid img {
+            width: 100%;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .action-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        /* Mobile responsiveness for the 3-column grid */
+        @media (max-width: 500px) {
+            .action-grid {
+                flex-direction: column;
+            }
         }
 
         /* Dashboard image styling */
@@ -113,6 +144,24 @@
 
     <h2>📌 Introduction</h2>
     <p>This project develops an Automated Face Recognition Attendance System to improve the efficiency of classroom attendance recording. Traditional methods such as paper sign-in, card scanning, and fingerprint systems can be time-consuming, inaccurate, or vulnerable to proxy attendance. The proposed system uses a Raspberry Pi 5, camera input, MTCNN face detection, FaceNet recognition, and anti-spoofing detection to identify students and record attendance automatically in a contactless way.</p>
+
+    <h2>📸 System in Action</h2>
+    <p>Our edge-computing software runs seamlessly in real-time, handling detection, validation, and logging instantly.</p>
+    
+    <div class="action-grid">
+        <div>
+            <img src="detecting.png" alt="Live Face Detection">
+            <div class="action-label">1. Live Detection</div>
+        </div>
+        <div>
+            <img src="recorded.png" alt="Attendance Successfully Recorded">
+            <div class="action-label">2. Verification</div>
+        </div>
+        <div>
+            <img src="spoofing.jpg" alt="Spoofing Blocked">
+            <div class="action-label">3. Anti-Spoofing</div>
+        </div>
+    </div>
 
     <h2>⚙️ System Architecture & Workflow</h2>
     <p>Our system integrates a robust hardware-software ecosystem to ensure seamless, real-time tracking.</p>
