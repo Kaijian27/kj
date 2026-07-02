@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Contactless Attendance System</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #7B1113; /* UPM Maroon */
+            font-size: 26px;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            text-align: center;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+        h2 {
+            color: #222;
+            font-size: 20px;
+            border-bottom: 2px solid #7B1113;
+            padding-bottom: 5px;
+            margin-top: 25px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .stats-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        .stat-item {
+            width: 45%;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .highlight {
+            color: #7B1113;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 35px;
+            font-size: 14px;
+            color: #777;
+            border-top: 1px solid #ddd;
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🎓 Automated Contactless Attendance System</h1>
+    <div class="subtitle">UPM Faculty of Engineering | EEE4948 Integrated Design Project</div>
+
+    <h2>🚀 The Future of Classroom Attendance</h2>
+    <p>Say goodbye to slow, inaccurate paper sign-ins and vulnerable proxy attendance! We have developed a state-of-the-art <strong>Automated Face Recognition Attendance System</strong> to identify students and record attendance contactlessly using edge computing.</p>
+
+    <h2>⚙️ How It Works</h2>
+    <ul>
+        <li><strong>Face Detection:</strong> Uses MTCNN to quickly locate faces.</li>
+        <li><strong>Facial Recognition:</strong> Uses FaceNet to generate a 512-D face embedding to match enrolled students.</li>
+        <li><strong>Liveness Detection:</strong> Uses an ONNX Anti-Spoofing Model to verify a real person is present.</li>
+    </ul>
+
+    <h2>✨ Key Features</h2>
+    <ul>
+        <li>✅ <strong>Timetable Detection:</strong> Automatically classifies students as Present or Late based on the schedule.</li>
+        <li>🛡️ <strong>Bulletproof Security:</strong> Failsafe against photos or digital screens with built-in anti-spoofing.</li>
+        <li>💻 <strong>Web Dashboard:</strong> A dedicated admin portal backed by FastAPI and SQLite for seamless student registration and CSV logging.</li>
+    </ul>
+
+    <h2>📊 Project Results</h2>
+    <div class="stats-grid">
+        <div class="stat-item">Recognition Accuracy: <span class="highlight">100%</span></div>
+        <div class="stat-item">Anti-Spoofing Success: <span class="highlight">100%</span></div>
+        <div class="stat-item">Inference Speed: <span class="highlight">30 FPS</span></div>
+        <div class="stat-item">Prototype Budget: <span class="highlight">RM 757</span></div>
+    </div>
+
+    <h2>👨‍💻 Meet the Team</h2>
+    <ul>
+        <li><strong>Developers:</strong> Chan Jian Xiang, Chan Kai Tong, Tan Kai Jian, and Wong Yong Zheng</li>
+        <li><strong>Lecturer:</strong> Prof. Ts. Dr. Wan Zuha Wan Hasan</li>
+        <li><strong>Supervisor:</strong> Prof. Madya Dr. Noor 'Ain Binti Kamsani</li>
+    </ul>
+
+    <div class="footer">
+        Thank you for scanning! Please feel free to ask us any questions during the presentation.
+    </div>
+</div>
+
+</body>
+</html>
