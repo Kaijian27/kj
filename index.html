@@ -34,16 +34,31 @@
             margin-bottom: 25px;
             font-size: 14px;
         }
-        .product-image {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            display: block;
-            margin: 0 auto 25px;
+        
+        /* Side-by-side image layout */
+        .hero-images {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+            justify-content: center;
+        }
+        .hero-images img {
+            width: 48%; /* Keeps them side-by-side */
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
             border: 1px solid #eee;
+            object-fit: cover;
         }
+
+        /* Dashboard image styling */
+        .dashboard-image {
+            width: 100%;
+            border-radius: 8px;
+            margin: 15px 0 5px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border: 1px solid #ddd;
+        }
+
         h2 {
             color: #222;
             font-size: 20px;
@@ -91,8 +106,10 @@
     <h1>🎓 Automated Contactless Attendance System</h1>
     <div class="subtitle">UPM Faculty of Engineering | EEE4948 Integrated Design Project</div>
 
-    <!-- Product Image -->
-    <img src="prototype.jpg" alt="Automated Contactless Attendance System Prototype" class="product-image">
+    <div class="hero-images">
+        <img src="prototype.jpg" alt="Hardware Prototype">
+        <img src="landing-page.jpg" alt="Web Portal Landing Page">
+    </div>
 
     <h2>📌 Introduction</h2>
     <p>This project develops an Automated Face Recognition Attendance System to improve the efficiency of classroom attendance recording. Traditional methods such as paper sign-in, card scanning, and fingerprint systems can be time-consuming, inaccurate, or vulnerable to proxy attendance. The proposed system uses a Raspberry Pi 5, camera input, MTCNN face detection, FaceNet recognition, and anti-spoofing detection to identify students and record attendance automatically in a contactless way.</p>
@@ -116,14 +133,16 @@
 
     <div class="workflow-box">
         <div class="workflow-title">3. Backend & Cloud Integration</div>
-        Once confirmed, attendance is categorized as Present or Late based on the timetable. Data is instantly logged to a local CSV and an SQLite database, then pushed through a FastAPI backend and Cloudflare Tunnel to our live Web Attendance Portal.
+        <p style="margin-top: 5px; margin-bottom: 10px;">Once confirmed, attendance is categorized as Present or Late based on the timetable. Data is instantly logged to a local CSV and an SQLite database, then pushed through a FastAPI backend and Cloudflare Tunnel to our live Web Attendance Portal.</p>
+        
+        <img src="dashboard.png" alt="Admin System Dashboard" class="dashboard-image">
     </div>
 
     <h2>✨ Key Features</h2>
     <ul>
         <li>✅ <strong>Timetable Detection:</strong> Automatically classifies attendance status based on real-time scheduling.</li>
         <li>🛡️ <strong>Bulletproof Security:</strong> Hardware-level frame skipping and liveness detection prevent spoofing attempts.</li>
-        <li>💻 <strong>Admin Dashboard:</strong> Comprehensive web portal for lecturers to view records and manage student registration.</li>
+        <li>💻 <strong>Admin Dashboard:</strong> Comprehensive web portal for lecturers to view records, monitor live analytics, and manage student registration.</li>
     </ul>
 
     <h2>👨‍💻 Meet the Team</h2>
