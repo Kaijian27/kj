@@ -47,22 +47,19 @@
         li {
             margin-bottom: 10px;
         }
-        .stats-grid {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+        .workflow-box {
             background: #f9f9f9;
+            border-left: 4px solid #7B1113;
             padding: 15px;
-            border-radius: 8px;
-            margin-top: 10px;
+            margin-bottom: 15px;
+            border-radius: 0 8px 8px 0;
+            font-size: 14px;
         }
-        .stat-item {
-            width: 45%;
-            margin-bottom: 10px;
+        .workflow-title {
             font-weight: bold;
-        }
-        .highlight {
             color: #7B1113;
+            margin-bottom: 5px;
+            font-size: 16px;
         }
         .footer {
             text-align: center;
@@ -81,29 +78,36 @@
     <div class="subtitle">UPM Faculty of Engineering | EEE4948 Integrated Design Project</div>
 
     <h2>🚀 The Future of Classroom Attendance</h2>
-    <p>Say goodbye to slow, inaccurate paper sign-ins and vulnerable proxy attendance! We have developed a state-of-the-art <strong>Automated Face Recognition Attendance System</strong> to identify students and record attendance contactlessly using edge computing.</p>
+    <p>Say goodbye to slow, inaccurate paper sign-ins and vulnerable proxy attendance! We have developed a state-of-the-art <strong>Automated Face Recognition Attendance System</strong> to identify students and record attendance contactlessly using a <strong>Raspberry Pi 5</strong> edge-computing setup.</p>
 
-    <h2>⚙️ How It Works</h2>
-    <ul>
-        <li><strong>Face Detection:</strong> Uses MTCNN to quickly locate faces.</li>
-        <li><strong>Facial Recognition:</strong> Uses FaceNet to generate a 512-D face embedding to match enrolled students.</li>
-        <li><strong>Liveness Detection:</strong> Uses an ONNX Anti-Spoofing Model to verify a real person is present.</li>
-    </ul>
+    <h2>⚙️ System Architecture & Workflow</h2>
+    <p>Our system integrates a robust hardware-software ecosystem to ensure seamless, real-time tracking.</p>
+
+    <div class="workflow-box">
+        <div class="workflow-title">1. Enrollment Phase</div>
+        The system captures 35 initial face samples per student. These are averaged into a single, highly accurate normative embedding and saved securely to the database.
+    </div>
+
+    <div class="workflow-box">
+        <div class="workflow-title">2. Live Recognition Pipeline</div>
+        <ul>
+            <li><strong>Detection & Alignment:</strong> Uses OpenCV and MTCNN to locate the largest face in the camera frame, then aligns it to a 160x160 crop.</li>
+            <li><strong>Liveness Validation:</strong> Passes the frame through an ONNX Anti-Spoofing Model (using threaded inference) to block photos or digital screens.</li>
+            <li><strong>Embedding & Matching:</strong> A FaceNet / InceptionResnetV1 model generates a 512-D face embedding. We use a Cosine Similarity Threshold of 0.82 to verify the student's identity against the database.</li>
+        </ul>
+    </div>
+
+    <div class="workflow-box">
+        <div class="workflow-title">3. Backend & Cloud Integration</div>
+        Once confirmed, attendance is categorized as Present or Late based on the timetable. Data is instantly logged to a local CSV and an SQLite database, then pushed through a FastAPI backend and Cloudflare Tunnel to our live Web Attendance Portal.
+    </div>
 
     <h2>✨ Key Features</h2>
     <ul>
-        <li>✅ <strong>Timetable Detection:</strong> Automatically classifies students as Present or Late based on the schedule.</li>
-        <li>🛡️ <strong>Bulletproof Security:</strong> Failsafe against photos or digital screens with built-in anti-spoofing.</li>
-        <li>💻 <strong>Web Dashboard:</strong> A dedicated admin portal backed by FastAPI and SQLite for seamless student registration and CSV logging.</li>
+        <li>✅ <strong>Timetable Detection:</strong> Automatically classifies attendance status based on real-time scheduling.</li>
+        <li>🛡️ <strong>Bulletproof Security:</strong> Hardware-level frame skipping and liveness detection prevent spoofing attempts.</li>
+        <li>💻 <strong>Admin Dashboard:</strong> Comprehensive web portal for lecturers to view records and manage student registration.</li>
     </ul>
-
-    <h2>📊 Project Results</h2>
-    <div class="stats-grid">
-        <div class="stat-item">Recognition Accuracy: <span class="highlight">100%</span></div>
-        <div class="stat-item">Anti-Spoofing Success: <span class="highlight">100%</span></div>
-        <div class="stat-item">Inference Speed: <span class="highlight">30 FPS</span></div>
-        <div class="stat-item">Prototype Budget: <span class="highlight">RM 757</span></div>
-    </div>
 
     <h2>👨‍💻 Meet the Team</h2>
     <ul>
