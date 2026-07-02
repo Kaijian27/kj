@@ -34,6 +34,16 @@
             margin-bottom: 25px;
             font-size: 14px;
         }
+        .product-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            display: block;
+            margin: 0 auto 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            border: 1px solid #eee;
+        }
         h2 {
             color: #222;
             font-size: 20px;
@@ -41,8 +51,12 @@
             padding-bottom: 5px;
             margin-top: 25px;
         }
+        p {
+            font-size: 15px;
+        }
         ul {
             padding-left: 20px;
+            font-size: 15px;
         }
         li {
             margin-bottom: 10px;
@@ -77,8 +91,11 @@
     <h1>🎓 Automated Contactless Attendance System</h1>
     <div class="subtitle">UPM Faculty of Engineering | EEE4948 Integrated Design Project</div>
 
-    <h2>🚀 The Future of Classroom Attendance</h2>
-    <p>Say goodbye to slow, inaccurate paper sign-ins and vulnerable proxy attendance! We have developed a state-of-the-art <strong>Automated Face Recognition Attendance System</strong> to identify students and record attendance contactlessly using a <strong>Raspberry Pi 5</strong> edge-computing setup.</p>
+    <!-- Product Image -->
+    <img src="prototype.jpg" alt="Automated Contactless Attendance System Prototype" class="product-image">
+
+    <h2>📌 Introduction</h2>
+    <p>This project develops an Automated Face Recognition Attendance System to improve the efficiency of classroom attendance recording. Traditional methods such as paper sign-in, card scanning, and fingerprint systems can be time-consuming, inaccurate, or vulnerable to proxy attendance. The proposed system uses a Raspberry Pi 5, camera input, MTCNN face detection, FaceNet recognition, and anti-spoofing detection to identify students and record attendance automatically in a contactless way.</p>
 
     <h2>⚙️ System Architecture & Workflow</h2>
     <p>Our system integrates a robust hardware-software ecosystem to ensure seamless, real-time tracking.</p>
